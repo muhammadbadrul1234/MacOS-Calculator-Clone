@@ -3,6 +3,8 @@
 //badrulalom.me
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.border.LineBorder;
+
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -21,14 +23,16 @@ public class CalculatorBadrul {
 		JPanel panel1 = new JPanel();
 		JPanel panel2= new JPanel();
 		JPanel panel3= new JPanel();
-		panel1.setBounds(1,1,260,60);
+		panel1.setBounds(1,10,5000,355);
 		panel1.setBackground(Color.DARK_GRAY);
-
-
 		panel1.setLayout(null);
 		final JTextField jtf = new JTextField();
-		jtf.setBounds(10,30,240,40);
+		jtf.setBounds(1,1,295,40);
 		jtf.setBackground(Color.DARK_GRAY);
+		jtf.setForeground(Color.WHITE);
+		jtf.setFont(new Font("Calibri", Font.BOLD, 20));
+		jtf.setHorizontalAlignment(JTextField.RIGHT);
+		jtf.setBorder(new LineBorder(Color.darkGray,1));
 		panel1.add(jtf);
 		panel2.setBounds(1,120,300,200);
 		panel2.setBackground(Color.DARK_GRAY);
@@ -42,7 +46,6 @@ public class CalculatorBadrul {
 		c.setBorderPainted(false);
 		c.setBackground(new Color(239, 188, 2));
 		c.setForeground(Color.white);
-		
 		c.addActionListener(new ActionListener(){
 			public void actionperformed(ActionEvent e){
 				String st = jtf.getText();
@@ -52,7 +55,6 @@ public class CalculatorBadrul {
                 // TODO Auto-generated method stub 
             }
 		});
-
 
 		JButton cc = new JButton("+/-");
 		cc.setFont(new Font("Calibri", Font.BOLD, 20));
@@ -445,17 +447,6 @@ public class CalculatorBadrul {
 		panel2.add(dot);
 		panel2.add(equal);
 		panel2.add(plus);
-
-
-
-
-		
-		
-		
-		
-		
-		
-
 		frame.add(panel1);
 		frame.setVisible(true);
  
