@@ -4,7 +4,6 @@
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
-import java.awt.event.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -21,8 +20,11 @@ public class CalculatorBadrul {
 		frame.setLocationRelativeTo(null);
 		JPanel panel1 = new JPanel();
 		JPanel panel2= new JPanel();
+		JPanel panel3= new JPanel();
 		panel1.setBounds(1,1,260,60);
 		panel1.setBackground(Color.DARK_GRAY);
+
+
 		panel1.setLayout(null);
 		final JTextField jtf = new JTextField();
 		jtf.setBounds(10,30,240,40);
@@ -87,7 +89,7 @@ public class CalculatorBadrul {
 		});
 
 		JButton div = new JButton("÷");
-		div.setFont(new Font("Arial", Font.BOLD, 20));
+		div.setFont(new Font("Calibri", Font.BOLD, 20));
 		div.setBackground(new Color(239, 188, 2));
 		div.setRolloverEnabled(false);
 		div.setFocusable(false);
@@ -104,7 +106,7 @@ public class CalculatorBadrul {
 		});
 
 		JButton zero = new JButton("0");
-		zero.setFont(new Font("Arial", Font.BOLD, 20));
+		zero.setFont(new Font("Calibri", Font.BOLD, 20));
 		zero.setRolloverEnabled(false);
 		zero.setFocusable(false);
 		zero.setBorderPainted(false);
@@ -137,7 +139,10 @@ public class CalculatorBadrul {
 	    	  	jtf.setText(st+"1");
 	      	}@Override
         	public void actionPerformed(ActionEvent e) {
-            	// TODO Auto-generated method stub
+            	String st = jtf.getText();
+	    	  	if(st.equals("0"))
+	    			st="";
+	    	  	jtf.setText(st+"1");
         	}
 		});
 
@@ -460,29 +465,5 @@ public class CalculatorBadrul {
     }
 	private static void setBorder(Border createEmptyBorder) {
 	}
-}
-class RoundedBorder implements Border {
-
-    private int radius;
-
-
-    RoundedBorder(int radius) {
-        this.radius = radius;
-    }
-
-
-    public Insets getBorderInsets(Component c) {
-        return new Insets(this.radius+1, this.radius+1, this.radius+2, this.radius);
-    }
-
-
-    public boolean isBorderOpaque() {
-        return true;
-    }
-
-
-    public void paintBorder(Component c, Graphics g, int x, int y, int width, int height) {
-        g.drawRoundRect(x, y, width-1, height-1, radius, radius);
-    }
 }
 
