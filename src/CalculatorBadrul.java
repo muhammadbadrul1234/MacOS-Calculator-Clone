@@ -14,7 +14,7 @@ public class CalculatorBadrul {
     static int num1,num2;
 	static char ope;
     public static void main(String[] args){
-        JFrame frame = new JFrame();
+        JFrame frame = new JFrame("Calculator");
 		frame.setSize(317,355);
 	    frame.setDefaultCloseOperation(3);
 		frame.getContentPane().setBackground(Color.DARK_GRAY);
@@ -52,7 +52,10 @@ public class CalculatorBadrul {
 					st="";
 			}@Override
             public void actionPerformed(ActionEvent e) {
-                // TODO Auto-generated method stub 
+                String st = jtf.getText();
+	    	  	if(st.equals("0"))
+	    			st="";
+	    	  	jtf.setText("");
             }
 		});
 
@@ -69,7 +72,14 @@ public class CalculatorBadrul {
 					st="";
 			}@Override
             public void actionPerformed(ActionEvent e) {
-                // TODO Auto-generated method stub 
+                String st = jtf.getText();
+				int number = Integer.parseInt(st);
+	    	  	if(number>0)
+	    	  		jtf.setText("-"+st);
+				else if(number<0)
+					jtf.setText("+"+st);
+				else
+					jtf.setText("0");
             }
 		});
 
@@ -86,7 +96,11 @@ public class CalculatorBadrul {
 					st="";
 			}@Override
             public void actionPerformed(ActionEvent e) {
-                // TODO Auto-generated method stub 
+                String st = jtf.getText();
+				if(st.equals("0"))
+				  	jtf.setText(st+"0");
+				else
+				 	jtf.setText(st+"%"); 
             }
 		});
 
@@ -103,7 +117,11 @@ public class CalculatorBadrul {
 					st="";
 			}@Override
             public void actionPerformed(ActionEvent e) {
-                // TODO Auto-generated method stub 
+				String st = jtf.getText();
+				if(st.equals("0"))
+				  	jtf.setText(st+"0");
+				else
+				 	jtf.setText(st+"÷");
             }
 		});
 
@@ -122,7 +140,11 @@ public class CalculatorBadrul {
 			    jtf.setText(st+"0");
 			}@Override
             public void actionPerformed(ActionEvent e) {
-                // TODO Auto-generated method stub 
+                String st = jtf.getText();
+				if(st.equals("0"))
+				  	jtf.setText(st+"0");
+				else
+				 	jtf.setText(st+"0");
             }
 		});
  
@@ -163,7 +185,11 @@ public class CalculatorBadrul {
 	    	  	jtf.setText(st+"2");
 	      	}@Override
         	public void actionPerformed(ActionEvent e) {
-            	// TODO Auto-generated method stub   
+            	String st = jtf.getText();
+				if(st.equals("0"))
+				  	jtf.setText(st+"0");
+				else
+				 	jtf.setText(st+"2");   
         	}
 		});
 
@@ -182,7 +208,11 @@ public class CalculatorBadrul {
 	    	  	jtf.setText(st+"3");
 	      	}@Override
         	public void actionPerformed(ActionEvent e) {
-            	// TODO Auto-generated method stub
+            	String st = jtf.getText();
+				if(st.equals("0"))
+				  	jtf.setText(st+"0");
+				else
+				 	jtf.setText(st+"3");
             
         	}
         });
@@ -202,7 +232,11 @@ public class CalculatorBadrul {
 	    	  	jtf.setText(st+"4");
 	      	}@Override
         	public void actionPerformed(ActionEvent e) {
-            	// TODO Auto-generated method stub
+            	String st = jtf.getText();
+				if(st.equals("0"))
+				  	jtf.setText(st+"0");
+				else
+				 	jtf.setText(st+"4");
             
         	}
         });
@@ -222,7 +256,11 @@ public class CalculatorBadrul {
 	    	  	jtf.setText(st+"5");
 	      	}@Override
         	public void actionPerformed(ActionEvent e) {
-            	// TODO Auto-generated method stub
+            	String st = jtf.getText();
+				if(st.equals("0"))
+				  	jtf.setText(st+"0");
+				else
+				 	jtf.setText(st+"5");
             
         	}
         });
@@ -242,7 +280,11 @@ public class CalculatorBadrul {
 	    	  	jtf.setText(st+"6");
 	      	}@Override
         	public void actionPerformed(ActionEvent e) {
-            	// TODO Auto-generated method stub
+            	String st = jtf.getText();
+				if(st.equals("0"))
+				  	jtf.setText(st+"0");
+				else
+				 	jtf.setText(st+"6");
             
         	}
         });
@@ -262,7 +304,11 @@ public class CalculatorBadrul {
 	    	  	jtf.setText(st+"7");
 	      	}@Override
         	public void actionPerformed(ActionEvent e) {
-            	// TODO Auto-generated method stub
+            	String st = jtf.getText();
+				if(st.equals("0"))
+				  	jtf.setText(st+"0");
+				else
+				 	jtf.setText(st+"7");
             
         	}
         });
@@ -282,7 +328,11 @@ public class CalculatorBadrul {
 	    	  	jtf.setText(st+"8");
 	      	}@Override
         	public void actionPerformed(ActionEvent e) {
-            	// TODO Auto-generated method stub
+            	String st = jtf.getText();
+				if(st.equals("0"))
+				  	jtf.setText(st+"0");
+				else
+				 	jtf.setText(st+"8");
             
         	}
         });
@@ -302,7 +352,11 @@ public class CalculatorBadrul {
 	    	  	jtf.setText(st+"9");
 	      	}@Override
         	public void actionPerformed(ActionEvent e) {
-            	// TODO Auto-generated method stub
+            	String st = jtf.getText();
+				if(st.equals("0"))
+				  	jtf.setText(st+"0");
+				else
+				 	jtf.setText(st+"9");
             
         	}
         });
@@ -322,7 +376,11 @@ public class CalculatorBadrul {
 	    	  	jtf.setText(st+"x");
 	      	}@Override
         	public void actionPerformed(ActionEvent e) {
-            	// TODO Auto-generated method stub
+            	String st = jtf.getText();
+				if(st.equals("0"))
+				  	jtf.setText(st+"0");
+				else
+				 	jtf.setText(st+"x");
             
         	}
         });
@@ -342,7 +400,11 @@ public class CalculatorBadrul {
 	    	  	jtf.setText(st+"-");
 	      	}@Override
         	public void actionPerformed(ActionEvent e) {
-            	// TODO Auto-generated method stub
+            	String st = jtf.getText();
+				if(st.equals("0"))
+				  	jtf.setText(st+"0");
+				else
+				 	jtf.setText(st+"-");
             
         	}
         });
@@ -362,7 +424,11 @@ public class CalculatorBadrul {
 	    	  	jtf.setText(st+"+");
 	      	}@Override
         	public void actionPerformed(ActionEvent e) {
-            	// TODO Auto-generated method stub
+            	String st = jtf.getText();
+				if(st.equals("0"))
+				  	jtf.setText(st+"0");
+				else
+				 	jtf.setText(st+"+");
             
         	}
         });
@@ -382,7 +448,11 @@ public class CalculatorBadrul {
 	    	  	jtf.setText(st+"√ ");
 	      	}@Override
         	public void actionPerformed(ActionEvent e) {
-            	// TODO Auto-generated method stub
+            	String st = jtf.getText();
+				if(st.equals("0"))
+				  	jtf.setText(st+"0");
+				else
+				 	jtf.setText(st+"√");
             
         	}
         });
@@ -402,7 +472,11 @@ public class CalculatorBadrul {
 	    	  	jtf.setText(st+".");
 	      	}@Override
         	public void actionPerformed(ActionEvent e) {
-            	// TODO Auto-generated method stub
+            	String st = jtf.getText();
+				if(st.equals("0"))
+				  	jtf.setText(st+"0");
+				else
+				 	jtf.setText(st+".");
             
         	}
         });
@@ -422,7 +496,11 @@ public class CalculatorBadrul {
 	    	  	jtf.setText(st+"=");
 	      	}@Override
         	public void actionPerformed(ActionEvent e) {
-            	// TODO Auto-generated method stub
+            	String st = jtf.getText();
+				if(st.equals("0"))
+				  	jtf.setText(st+"0");
+				else
+				 	jtf.setText(st+"=");
             
         	}
         });
@@ -449,6 +527,8 @@ public class CalculatorBadrul {
 		panel2.add(plus);
 		frame.add(panel1);
 		frame.setVisible(true);
+
+		
  
 
 
