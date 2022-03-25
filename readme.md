@@ -1,37 +1,30 @@
 # Simple Java Calculator
 
-![Logo Simple Java Calculator](logo.png)
+![logo](https://user-images.githubusercontent.com/97453992/160028498-117568f6-774f-4719-9283-0bc15c65419c.png)
+
 
 This project was originally written using intellij, but I have migrated it to Visual Studio Code.
 This calculator is simple with an easy code to help novices learn how to create a calculator program with Java.
 
+  
+![271440660_680168176677087_6370811145310420073_n](https://user-images.githubusercontent.com/97453992/160028604-b10758f7-c3c0-467d-9e9c-23eabe5c0585.png)
 
-![Example: Java Calculator](Screenshots/screenshot.png)
 
-**You might also like my [Simple Java Text Editor](https://github.com/pH-7/Simple-Java-Text-Editor).**
+
 
 
 ## AUTHOR
 
-### Base Application
+### Base Application!
 
-**[Pierre-Henry Soria](http://ph7.me)**
+![Minimal Style Photographer Business Card](https://user-images.githubusercontent.com/97453992/160029551-55a953e6-ef95-423f-9d2a-3873d5b7e364.gif)
 
-### Modifications and Improvements
-
-[Achintha Gunasekara](http://www.achinthagunasekara.com)
-
-[xdvrx1](https://github.com/xdvrx1)
+[Muhammad Badrul](https://user-images.githubusercontent.com/97453992/160028716-b017b5d5-3eb5-4d47-8e22-7382e7e8b2fd.jpg)
 
 
 ## CONTACT
 
-Pierre-Henry SORIA: pierrehs [AT] hotmail [D0T] com
-
-Achintha Gunasekara: contact [AT] achinthagunasekara [D0T] com
+badrulalomtawsyat@gmail.com
 
 
-## LICENSE
-
-Apache License, Version 2.0 or later; See the license.txt file in the "NotePad" folder.
 
