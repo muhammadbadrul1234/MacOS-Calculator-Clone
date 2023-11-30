@@ -17,34 +17,34 @@ public class CalculatorBadrul {
         JFrame frame = new JFrame("Calculator");
 		frame.setSize(317,355);
 	    frame.setDefaultCloseOperation(3);
-		frame.getContentPane().setBackground(Color.DARK_GRAY);
+		frame.getContentPane().setBackground(Color.decode("#434344"));
 	    frame.setLayout(null);
 		frame.setLocationRelativeTo(null);
 		JPanel panel1 = new JPanel();
 		JPanel panel2= new JPanel();
 		JPanel panel3= new JPanel();
 		panel1.setBounds(1,10,5000,355);
-		panel1.setBackground(Color.DARK_GRAY);
+		panel1.setBackground(Color.decode("#434344"));
 		panel1.setLayout(null);
 		final JTextField jtf = new JTextField();
 		jtf.setBounds(1,1,295,40);
-		jtf.setBackground(Color.DARK_GRAY);
+		jtf.setBackground(Color.decode("#434344"));
 		jtf.setForeground(Color.WHITE);
-		jtf.setFont(new Font("Calibri", Font.BOLD, 20));
+		jtf.setFont(new Font("Open Sans Light", Font.PLAIN, 20));
 		jtf.setHorizontalAlignment(JTextField.RIGHT);
 		jtf.setBorder(new LineBorder(Color.darkGray,1));
 		panel1.add(jtf);
 		panel2.setBounds(1,120,300,200);
-		panel2.setBackground(Color.DARK_GRAY);
+		panel2.setBackground(Color.decode("#434344"));
 		panel2.setLayout(new GridLayout(5,5,1,1));
 		frame.add(panel2);
 
 		JButton c = new JButton("C");
-		c.setFont(new Font("Calibri", Font.BOLD, 20));
+		c.setFont(new Font("Helvetica", Font.PLAIN, 20));
 		c.setRolloverEnabled(false);
 		c.setFocusable(false);
 		c.setBorderPainted(false);
-		c.setBackground(new Color(239, 188, 2));
+		c.setBackground(Color.decode("#555556"));
 		c.setForeground(Color.white);
 		c.addActionListener(new ActionListener(){
 			public void actionperformed(ActionEvent e){
@@ -60,11 +60,11 @@ public class CalculatorBadrul {
 		});
 
 		JButton cc = new JButton("+/-");
-		cc.setFont(new Font("Calibri", Font.BOLD, 20));
+		cc.setFont(new Font("Helvetica", Font.PLAIN, 20));
 		cc.setRolloverEnabled(false);
 		cc.setFocusable(false);
 		cc.setBorderPainted(false);
-		cc.setBackground(Color.LIGHT_GRAY);
+		cc.setBackground(Color.decode("#555556"));
 		cc.setForeground(Color.white);
 		cc.addActionListener(new ActionListener(){
 			public void actionperformed(ActionEvent e){
@@ -84,11 +84,11 @@ public class CalculatorBadrul {
 		});
 
 		JButton percent = new JButton("%");
-		percent.setFont(new Font("Calibri", Font.BOLD, 20));
+		percent.setFont(new Font("Helvetica", Font.PLAIN, 20));
 		percent.setRolloverEnabled(false);
 		percent.setFocusable(false);
 		percent.setBorderPainted(false);
-		percent.setBackground(Color.lightGray);
+		percent.setBackground(Color.decode("#555556"));
 		percent.setForeground(Color.white);
 		percent.addActionListener(new ActionListener(){
 			public void actionperformed(ActionEvent e){
@@ -105,8 +105,8 @@ public class CalculatorBadrul {
 		});
 
 		JButton div = new JButton("÷");
-		div.setFont(new Font("Calibri", Font.BOLD, 20));
-		div.setBackground(new Color(239, 188, 2));
+		div.setFont(new Font("Helvetica", Font.PLAIN, 20));
+		div.setBackground(Color.decode("#F2A33C"));
 		div.setRolloverEnabled(false);
 		div.setFocusable(false);
 		div.setBorderPainted(false);
@@ -126,7 +126,7 @@ public class CalculatorBadrul {
 		});
 
 		JButton zero = new JButton("0");
-		zero.setFont(new Font("Calibri", Font.BOLD, 20));
+		zero.setFont(new Font("Helvetica", Font.PLAIN, 20));
 		zero.setRolloverEnabled(false);
 		zero.setFocusable(false);
 		zero.setBorderPainted(false);
@@ -149,7 +149,7 @@ public class CalculatorBadrul {
 		});
  
 		JButton one = new JButton("1");
-		one.setFont(new Font("Calibri", Font.BOLD, 20));
+		one.setFont(new Font("Helvetica", Font.PLAIN, 20));
 		one.setRolloverEnabled(false);
 		one.setFocusable(false);
 		one.setBorderPainted(false);
@@ -171,7 +171,7 @@ public class CalculatorBadrul {
 		});
 
 		JButton two = new JButton("2");
-		two.setFont(new Font("Calibri", Font.BOLD, 20));
+		two.setFont(new Font("Helvetica", Font.PLAIN, 20));
 		two.setRolloverEnabled(false);
 		two.setFocusable(false);
 		two.setBorderPainted(false);
@@ -194,7 +194,7 @@ public class CalculatorBadrul {
 		});
 
 		JButton three = new JButton("3");
-		three.setFont(new Font("Calibri", Font.BOLD, 20));
+		three.setFont(new Font("Helvetica", Font.PLAIN, 20));
 		three.setRolloverEnabled(false);
 		three.setFocusable(false);
 		three.setBorderPainted(false);
@@ -218,7 +218,7 @@ public class CalculatorBadrul {
         });
 
 		JButton four = new JButton("4");
-		four.setFont(new Font("Calibri", Font.BOLD, 20));
+		four.setFont(new Font("Helvetica", Font.PLAIN, 20));
 		four.setRolloverEnabled(false);
 		four.setFocusable(false);
 		four.setBorderPainted(false);
@@ -242,7 +242,7 @@ public class CalculatorBadrul {
         });
 
 		JButton five = new JButton("5");
-		five.setFont(new Font("Calibri", Font.BOLD, 20));
+		five.setFont(new Font("Helvetica", Font.PLAIN, 20));
 		five.setRolloverEnabled(false);
 		five.setFocusable(false);
 		five.setBorderPainted(false);
@@ -266,7 +266,7 @@ public class CalculatorBadrul {
         });
 
 		JButton six = new JButton("6");
-		six.setFont(new Font("Calibri", Font.BOLD, 20));
+		six.setFont(new Font("Helvetica", Font.PLAIN, 20));
 		six.setRolloverEnabled(false);
 		six.setFocusable(false);
 		six.setBorderPainted(false);
@@ -290,7 +290,7 @@ public class CalculatorBadrul {
         });
 
 		JButton seven = new JButton("7");
-		seven.setFont(new Font("Calibri", Font.BOLD, 20));
+		seven.setFont(new Font("Helvetica", Font.PLAIN, 20));
 		seven.setRolloverEnabled(false);
 		seven.setFocusable(false);
 		seven.setBorderPainted(false);
@@ -314,7 +314,7 @@ public class CalculatorBadrul {
         });
 
 		JButton eight = new JButton("8");
-		eight.setFont(new Font("Calibri", Font.BOLD, 20));
+		eight.setFont(new Font("Helvetica", Font.PLAIN, 20));
 		eight.setRolloverEnabled(false);
 		eight.setFocusable(false);
 		eight.setBorderPainted(false);
@@ -338,7 +338,7 @@ public class CalculatorBadrul {
         });
 
 		JButton nine = new JButton("9");
-		nine.setFont(new Font("Calibri", Font.BOLD, 20));
+		nine.setFont(new Font("Helvetica", Font.PLAIN, 20));
 		nine.setRolloverEnabled(false);
 		nine.setFocusable(false);
 		nine.setBorderPainted(false);
@@ -362,11 +362,11 @@ public class CalculatorBadrul {
         });
 
 		JButton multiply = new JButton("x");
-		multiply.setFont(new Font("Calibri", Font.BOLD, 20));
+		multiply.setFont(new Font("Helvetica", Font.PLAIN, 20));
 		multiply.setRolloverEnabled(false);
 		multiply.setFocusable(false);
 		multiply.setBorderPainted(false);
-		multiply.setBackground(new Color(239, 188, 2));
+		multiply.setBackground(Color.decode("#F2A33C"));
 		multiply.setForeground(Color.white);
 		multiply.addActionListener(new ActionListener(){
 	      	public void actionperformed(ActionEvent e){
@@ -386,11 +386,11 @@ public class CalculatorBadrul {
         });
 
 		JButton minus = new JButton("-");
-		minus.setFont(new Font("Calibri", Font.BOLD, 20));
+		minus.setFont(new Font("Helvetica", Font.PLAIN, 20));
 		minus.setRolloverEnabled(false);
 		minus.setFocusable(false);
 		minus.setBorderPainted(false);
-		minus.setBackground(new Color(239, 188, 2));
+		minus.setBackground(Color.decode("#F2A33C"));
 		minus.setForeground(Color.white);
 		minus.addActionListener(new ActionListener(){
 	      	public void actionperformed(ActionEvent e){
@@ -410,11 +410,11 @@ public class CalculatorBadrul {
         });
 
 		JButton plus = new JButton("+");
-		plus.setFont(new Font("Calibri", Font.BOLD, 20));
+		plus.setFont(new Font("Helvetica", Font.PLAIN, 20));
 		plus.setRolloverEnabled(false);
 		plus.setFocusable(false);
 		plus.setBorderPainted(false);
-		plus.setBackground(new Color(239, 188, 2));
+		plus.setBackground(Color.decode("#F2A33C"));
 		plus.setForeground(Color.white);
 		plus.addActionListener(new ActionListener(){
 	      	public void actionperformed(ActionEvent e){
@@ -434,11 +434,11 @@ public class CalculatorBadrul {
         });
 
 		JButton root = new JButton("√ ");
-		root.setFont(new Font("Calibri", Font.BOLD, 20));
+		root.setFont(new Font("Helvetica", Font.PLAIN, 20));
 		root.setRolloverEnabled(false);
 		root.setFocusable(false);
 		root.setBorderPainted(false);
-		root.setBackground(Color.lightGray);
+		root.setBackground(Color.decode("#555556"));
 		root.setForeground(Color.white);
 		root.addActionListener(new ActionListener(){
 	      	public void actionperformed(ActionEvent e){
@@ -458,7 +458,7 @@ public class CalculatorBadrul {
         });
 
 		JButton dot = new JButton(".");
-		dot.setFont(new Font("Calibri", Font.BOLD, 20));
+		dot.setFont(new Font("Helvetica", Font.PLAIN, 20));
 		dot.setRolloverEnabled(false);
 		dot.setFocusable(false);
 		dot.setBorderPainted(false);
@@ -482,11 +482,11 @@ public class CalculatorBadrul {
         });
 
 		JButton equal = new JButton("=");
-		equal.setFont(new Font("Calibri", Font.BOLD, 20));
+		equal.setFont(new Font("Helvetica", Font.PLAIN, 20));
 		equal.setRolloverEnabled(false);
 		equal.setFocusable(false);
 		equal.setBorderPainted(false);
-		equal.setBackground(Color.GRAY);
+		equal.setBackground(Color.decode("#F2A33C"));
 		equal.setForeground(Color.white);
 		equal.addActionListener(new ActionListener(){
 	      	public void actionperformed(ActionEvent e){
