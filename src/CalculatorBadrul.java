@@ -1,3 +1,4 @@
+
 //2012020216
 //MD. BADRUl ALOM TAWSYAT
 //badrulalom.me
@@ -9,54 +10,53 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-
 public class CalculatorBadrul {
-    static int num1,num2;
+	static int num1, num2;
 	static char ope;
 	final static JTextField jtf = new JTextField();
 
-	private void addButton(String label, Color background, Color foreground) {
-	JButton button = new JButton(label);
-	button.setFont(new Font("Helvetica", Font.PLAIN, 20));
-	button.setRolloverEnabled(false);
-	button.setFocusable(false);
-	button.setBorderPainted(false);
-	button.setBackground(background);
-	button.setForeground(foreground);
-	button.addActionListener(new ActionListener() {
-		public void actionPerformed(ActionEvent e) {
-			String st = jtf.getText();
-			if (st.equals("0"))
-				jtf.setText(st + "0");
-			else
-				jtf.setText(st + label);
-		}
-	});
-	// Add the button to your container
+	private static JButton addButton(String label, Color background, Color foreground) {
+		JButton button = new JButton(label);
+		button.setFont(new Font("Helvetica", Font.PLAIN, 20));
+		button.setRolloverEnabled(false);
+		button.setFocusable(false);
+		button.setBorderPainted(false);
+		button.setBackground(background);
+		button.setForeground(foreground);
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String st = jtf.getText();
+				if (st.equals(label))
+					jtf.setText(st + "0");
+				else
+					jtf.setText(st + label);
+			}
+		});
+		return button;
 	}
 
-    public static void main(String[] args){
-        JFrame frame = new JFrame("Calculator");
-		frame.setSize(270,440);
-	    frame.setDefaultCloseOperation(3);
+	public static void main(String[] args) {
+		JFrame frame = new JFrame("Calculator");
+		frame.setSize(270, 440);
+		frame.setDefaultCloseOperation(3);
 		frame.getContentPane().setBackground(Color.decode("#434344"));
-	    frame.setLayout(null);
+		frame.setLayout(null);
 		frame.setLocationRelativeTo(null);
 		JPanel panel1 = new JPanel();
-		JPanel panel2= new JPanel();
-		panel1.setBounds(1,10,280,355);
+		JPanel panel2 = new JPanel();
+		panel1.setBounds(1, 10, 280, 355);
 		panel1.setBackground(Color.decode("#434344"));
 		panel1.setLayout(null);
-		jtf.setBounds(1,60,260,40);
+		jtf.setBounds(1, 60, 260, 40);
 		jtf.setBackground(Color.decode("#434344"));
 		jtf.setForeground(Color.WHITE);
 		jtf.setFont(new Font("Open Sans Light", Font.PLAIN, 40));
 		jtf.setHorizontalAlignment(JTextField.RIGHT);
-		jtf.setBorder(new LineBorder(Color.darkGray,1));
+		jtf.setBorder(new LineBorder(Color.darkGray, 1));
 		panel1.add(jtf);
-		panel2.setBounds(1,120,260,280);
+		panel2.setBounds(1, 120, 260, 280);
 		panel2.setBackground(Color.decode("#434344"));
-		panel2.setLayout(new GridLayout(5,5,1,1));
+		panel2.setLayout(new GridLayout(5, 5, 1, 1));
 		frame.add(panel2);
 
 		JButton c = new JButton("C");
@@ -66,13 +66,13 @@ public class CalculatorBadrul {
 		c.setBorderPainted(false);
 		c.setBackground(Color.decode("#555556"));
 		c.setForeground(Color.white);
-		c.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
-                String st = jtf.getText();
-	    	  	if(st.equals("0"))
-	    			st="";
-	    	  	jtf.setText("");
-            }
+		c.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String st = jtf.getText();
+				if (st.equals("0"))
+					st = "";
+				jtf.setText("");
+			}
 		});
 
 		JButton cc = new JButton("+/-");
@@ -82,17 +82,17 @@ public class CalculatorBadrul {
 		cc.setBorderPainted(false);
 		cc.setBackground(Color.decode("#555556"));
 		cc.setForeground(Color.white);
-		cc.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
-                String st = jtf.getText();
+		cc.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String st = jtf.getText();
 				int number = Integer.parseInt(st);
-	    	  	if(number>0)
-	    	  		jtf.setText("-"+st);
-				else if(number<0)
-					jtf.setText("+"+st);
+				if (number > 0)
+					jtf.setText("-" + st);
+				else if (number < 0)
+					jtf.setText("+" + st);
 				else
 					jtf.setText("0");
-            }
+			}
 		});
 
 		JButton percent = new JButton("%");
@@ -102,14 +102,14 @@ public class CalculatorBadrul {
 		percent.setBorderPainted(false);
 		percent.setBackground(Color.decode("#555556"));
 		percent.setForeground(Color.white);
-		percent.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
-                String st = jtf.getText();
-				if(st.equals("0"))
-				  	jtf.setText(st+"0");
+		percent.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String st = jtf.getText();
+				if (st.equals("0"))
+					jtf.setText(st + "0");
 				else
-				 	jtf.setText(st+"%"); 
-            }
+					jtf.setText(st + "%");
+			}
 		});
 
 		JButton div = new JButton("÷");
@@ -119,193 +119,26 @@ public class CalculatorBadrul {
 		div.setFocusable(false);
 		div.setBorderPainted(false);
 		div.setForeground(Color.white);
-		div.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
+		div.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
 				String st = jtf.getText();
-				if(st.equals("0"))
-				  	jtf.setText(st+"0");
+				if (st.equals("0"))
+					jtf.setText(st + "0");
 				else
-				 	jtf.setText(st+"÷");
-            }
+					jtf.setText(st + "÷");
+			}
 		});
 
-		//addButton("0", Color.GRAY, Color.white);
-
-		JButton zero = new JButton("0");
-		zero.setFont(new Font("Helvetica", Font.PLAIN, 20));
-		zero.setRolloverEnabled(false);
-		zero.setFocusable(false);
-		zero.setBorderPainted(false);
-		zero.setBackground(Color.gray);
-		zero.setForeground(Color.white);
-		zero.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
-                String st = jtf.getText();
-				if(st.equals("0"))
-				  	jtf.setText(st+"0");
-				else
-				 	jtf.setText(st+"0");
-            }
-		});
-
-		JButton one = new JButton("1");
-		one.setFont(new Font("Helvetica", Font.PLAIN, 20));
-		one.setRolloverEnabled(false);
-		one.setFocusable(false);
-		one.setBorderPainted(false);
-		one.setBackground(Color.GRAY);
-		one.setForeground(Color.white);
-		one.addActionListener(new ActionListener(){
-        	public void actionPerformed(ActionEvent e) {
-            	String st = jtf.getText();
-	    	  	if(st.equals("0"))
-	    			st="";
-	    	  	jtf.setText(st+"1");
-        	}
-		});
-
-		JButton two = new JButton("2");
-		two.setFont(new Font("Helvetica", Font.PLAIN, 20));
-		two.setRolloverEnabled(false);
-		two.setFocusable(false);
-		two.setBorderPainted(false);
-		two.setBackground(Color.GRAY);
-		two.setForeground(Color.white);
-		two.addActionListener(new ActionListener(){
-        	public void actionPerformed(ActionEvent e) {
-            	String st = jtf.getText();
-				if(st.equals("0"))
-				  	jtf.setText(st+"0");
-				else
-				 	jtf.setText(st+"2");   
-        	}
-		});
-
-		JButton three = new JButton("3");
-		three.setFont(new Font("Helvetica", Font.PLAIN, 20));
-		three.setRolloverEnabled(false);
-		three.setFocusable(false);
-		three.setBorderPainted(false);
-		three.setBackground(Color.GRAY);
-		three.setForeground(Color.white);
-		three.addActionListener(new ActionListener(){
-        	public void actionPerformed(ActionEvent e) {
-            	String st = jtf.getText();
-				if(st.equals("0"))
-				  	jtf.setText(st+"0");
-				else
-				 	jtf.setText(st+"3");
-            
-        	}
-        });
-
-		JButton four = new JButton("4");
-		four.setFont(new Font("Helvetica", Font.PLAIN, 20));
-		four.setRolloverEnabled(false);
-		four.setFocusable(false);
-		four.setBorderPainted(false);
-		four.setBackground(Color.GRAY);
-		four.setForeground(Color.white);
-		four.addActionListener(new ActionListener(){
-        	public void actionPerformed(ActionEvent e) {
-            	String st = jtf.getText();
-				if(st.equals("0"))
-				  	jtf.setText(st+"0");
-				else
-				 	jtf.setText(st+"4");
-            
-        	}
-        });
-
-		JButton five = new JButton("5");
-		five.setFont(new Font("Helvetica", Font.PLAIN, 20));
-		five.setRolloverEnabled(false);
-		five.setFocusable(false);
-		five.setBorderPainted(false);
-		five.setBackground(Color.GRAY);
-		five.setForeground(Color.white);
-		five.addActionListener(new ActionListener(){
-        	public void actionPerformed(ActionEvent e) {
-            	String st = jtf.getText();
-				if(st.equals("0"))
-				  	jtf.setText(st+"0");
-				else
-				 	jtf.setText(st+"5");
-            
-        	}
-        });
-
-		JButton six = new JButton("6");
-		six.setFont(new Font("Helvetica", Font.PLAIN, 20));
-		six.setRolloverEnabled(false);
-		six.setFocusable(false);
-		six.setBorderPainted(false);
-		six.setBackground(Color.GRAY);
-		six.setForeground(Color.white);
-		six.addActionListener(new ActionListener(){
-        	public void actionPerformed(ActionEvent e) {
-            	String st = jtf.getText();
-				if(st.equals("0"))
-				  	jtf.setText(st+"0");
-				else
-				 	jtf.setText(st+"6");
-            
-        	}
-        });
-
-		JButton seven = new JButton("7");
-		seven.setFont(new Font("Helvetica", Font.PLAIN, 20));
-		seven.setRolloverEnabled(false);
-		seven.setFocusable(false);
-		seven.setBorderPainted(false);
-		seven.setBackground(Color.GRAY);
-		seven.setForeground(Color.white);
-		seven.addActionListener(new ActionListener(){
-        	public void actionPerformed(ActionEvent e) {
-            	String st = jtf.getText();
-				if(st.equals("0"))
-				  	jtf.setText(st+"0");
-				else
-				 	jtf.setText(st+"7");
-            
-        	}
-        });
-
-		JButton eight = new JButton("8");
-		eight.setFont(new Font("Helvetica", Font.PLAIN, 20));
-		eight.setRolloverEnabled(false);
-		eight.setFocusable(false);
-		eight.setBorderPainted(false);
-		eight.setBackground(Color.GRAY);
-		eight.setForeground(Color.white);
-		eight.addActionListener(new ActionListener(){
-        	public void actionPerformed(ActionEvent e) {
-            	String st = jtf.getText();
-				if(st.equals("0"))
-				  	jtf.setText(st+"0");
-				else
-				 	jtf.setText(st+"8");
-            
-        	}
-        });
-
-		JButton nine = new JButton("9");
-		nine.setFont(new Font("Helvetica", Font.PLAIN, 20));
-		nine.setRolloverEnabled(false);
-		nine.setFocusable(false);
-		nine.setBorderPainted(false);
-		nine.setBackground(Color.GRAY);
-		nine.setForeground(Color.white);
-		nine.addActionListener(new ActionListener(){
-        	public void actionPerformed(ActionEvent e) {
-            	String st = jtf.getText();
-				if(st.equals("0"))
-				  	jtf.setText(st+"0");
-				else
-				 	jtf.setText(st+"9");
-            
-        	}
-        });
+		JButton zero = addButton("0", Color.GRAY, Color.white);
+		JButton one = addButton("1", Color.GRAY, Color.white);
+		JButton two = addButton("2", Color.GRAY, Color.white);
+		JButton three = addButton("3", Color.GRAY, Color.white);
+		JButton four = addButton("4", Color.GRAY, Color.white);
+		JButton five = addButton("5", Color.GRAY, Color.white);
+		JButton six = addButton("6", Color.GRAY, Color.white);
+		JButton seven = addButton("7", Color.GRAY, Color.white);
+		JButton eight = addButton("8", Color.GRAY, Color.white);
+		JButton nine = addButton("9", Color.GRAY, Color.white);
 
 		JButton multiply = new JButton("x");
 		multiply.setFont(new Font("Helvetica", Font.PLAIN, 20));
@@ -314,16 +147,16 @@ public class CalculatorBadrul {
 		multiply.setBorderPainted(false);
 		multiply.setBackground(Color.decode("#F2A33C"));
 		multiply.setForeground(Color.white);
-		multiply.addActionListener(new ActionListener(){
-        	public void actionPerformed(ActionEvent e) {
-            	String st = jtf.getText();
-				if(st.equals("0"))
-				  	jtf.setText(st+"0");
+		multiply.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String st = jtf.getText();
+				if (st.equals("0"))
+					jtf.setText(st + "0");
 				else
-				 	jtf.setText(st+"x");
-            
-        	}
-        });
+					jtf.setText(st + "x");
+
+			}
+		});
 
 		JButton minus = new JButton("-");
 		minus.setFont(new Font("Helvetica", Font.PLAIN, 20));
@@ -332,16 +165,16 @@ public class CalculatorBadrul {
 		minus.setBorderPainted(false);
 		minus.setBackground(Color.decode("#F2A33C"));
 		minus.setForeground(Color.white);
-		minus.addActionListener(new ActionListener(){
-        	public void actionPerformed(ActionEvent e) {
-            	String st = jtf.getText();
-				if(st.equals("0"))
-				  	jtf.setText(st+"0");
+		minus.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String st = jtf.getText();
+				if (st.equals("0"))
+					jtf.setText(st + "0");
 				else
-				 	jtf.setText(st+"-");
-            
-        	}
-        });
+					jtf.setText(st + "-");
+
+			}
+		});
 
 		JButton plus = new JButton("+");
 		plus.setFont(new Font("Helvetica", Font.PLAIN, 20));
@@ -350,16 +183,16 @@ public class CalculatorBadrul {
 		plus.setBorderPainted(false);
 		plus.setBackground(Color.decode("#F2A33C"));
 		plus.setForeground(Color.white);
-		plus.addActionListener(new ActionListener(){
-        	public void actionPerformed(ActionEvent e) {
-            	String st = jtf.getText();
-				if(st.equals("0"))
-				  	jtf.setText(st+"0");
+		plus.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String st = jtf.getText();
+				if (st.equals("0"))
+					jtf.setText(st + "0");
 				else
-				 	jtf.setText(st+"+");
-            
-        	}
-        });
+					jtf.setText(st + "+");
+
+			}
+		});
 
 		JButton root = new JButton("√ ");
 		root.setFont(new Font("Helvetica", Font.PLAIN, 20));
@@ -368,16 +201,16 @@ public class CalculatorBadrul {
 		root.setBorderPainted(false);
 		root.setBackground(Color.decode("#555556"));
 		root.setForeground(Color.white);
-		root.addActionListener(new ActionListener(){
-        	public void actionPerformed(ActionEvent e) {
-            	String st = jtf.getText();
-				if(st.equals("0"))
-				  	jtf.setText(st+"0");
+		root.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String st = jtf.getText();
+				if (st.equals("0"))
+					jtf.setText(st + "0");
 				else
-				 	jtf.setText(st+"√");
-            
-        	}
-        });
+					jtf.setText(st + "√");
+
+			}
+		});
 
 		JButton dot = new JButton(".");
 		dot.setFont(new Font("Helvetica", Font.PLAIN, 20));
@@ -386,16 +219,16 @@ public class CalculatorBadrul {
 		dot.setBorderPainted(false);
 		dot.setBackground(Color.GRAY);
 		dot.setForeground(Color.white);
-		dot.addActionListener(new ActionListener(){
-        	public void actionPerformed(ActionEvent e) {
-            	String st = jtf.getText();
-				if(st.equals("0"))
-				  	jtf.setText(st+"0");
+		dot.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String st = jtf.getText();
+				if (st.equals("0"))
+					jtf.setText(st + "0");
 				else
-				 	jtf.setText(st+".");
-            
-        	}
-        });
+					jtf.setText(st + ".");
+
+			}
+		});
 
 		JButton equal = new JButton("=");
 		equal.setFont(new Font("Helvetica", Font.PLAIN, 20));
@@ -404,16 +237,16 @@ public class CalculatorBadrul {
 		equal.setBorderPainted(false);
 		equal.setBackground(Color.decode("#F2A33C"));
 		equal.setForeground(Color.white);
-		equal.addActionListener(new ActionListener(){
-        	public void actionPerformed(ActionEvent e) {
-            	String st = jtf.getText();
-				if(st.equals("0"))
-				  	jtf.setText(st+"0");
+		equal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String st = jtf.getText();
+				if (st.equals("0"))
+					jtf.setText(st + "0");
 				else
-				 	jtf.setText(st+"=");
-            
-        	}
-        });
+					jtf.setText(st + "=");
+
+			}
+		});
 
 		panel2.add(root);
 		panel2.add(cc);
@@ -438,13 +271,8 @@ public class CalculatorBadrul {
 		frame.add(panel1);
 		frame.setVisible(true);
 
-		
- 
+	}
 
-
-        
-    }
 	private static void setBorder(Border createEmptyBorder) {
 	}
 }
-
