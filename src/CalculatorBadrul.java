@@ -13,28 +13,48 @@ import java.awt.event.ActionEvent;
 public class CalculatorBadrul {
     static int num1,num2;
 	static char ope;
+	final static JTextField jtf = new JTextField();
+
+	private void addButton(String label, Color background, Color foreground) {
+	JButton button = new JButton(label);
+	button.setFont(new Font("Helvetica", Font.PLAIN, 20));
+	button.setRolloverEnabled(false);
+	button.setFocusable(false);
+	button.setBorderPainted(false);
+	button.setBackground(background);
+	button.setForeground(foreground);
+	button.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			String st = jtf.getText();
+			if (st.equals("0"))
+				jtf.setText(st + "0");
+			else
+				jtf.setText(st + label);
+		}
+	});
+	// Add the button to your container
+	}
+
     public static void main(String[] args){
         JFrame frame = new JFrame("Calculator");
-		frame.setSize(317,355);
+		frame.setSize(270,440);
 	    frame.setDefaultCloseOperation(3);
 		frame.getContentPane().setBackground(Color.decode("#434344"));
 	    frame.setLayout(null);
 		frame.setLocationRelativeTo(null);
 		JPanel panel1 = new JPanel();
 		JPanel panel2= new JPanel();
-		JPanel panel3= new JPanel();
-		panel1.setBounds(1,10,5000,355);
+		panel1.setBounds(1,10,280,355);
 		panel1.setBackground(Color.decode("#434344"));
 		panel1.setLayout(null);
-		final JTextField jtf = new JTextField();
-		jtf.setBounds(1,1,295,40);
+		jtf.setBounds(1,60,260,40);
 		jtf.setBackground(Color.decode("#434344"));
 		jtf.setForeground(Color.WHITE);
-		jtf.setFont(new Font("Open Sans Light", Font.PLAIN, 20));
+		jtf.setFont(new Font("Open Sans Light", Font.PLAIN, 40));
 		jtf.setHorizontalAlignment(JTextField.RIGHT);
 		jtf.setBorder(new LineBorder(Color.darkGray,1));
 		panel1.add(jtf);
-		panel2.setBounds(1,120,300,200);
+		panel2.setBounds(1,120,260,280);
 		panel2.setBackground(Color.decode("#434344"));
 		panel2.setLayout(new GridLayout(5,5,1,1));
 		frame.add(panel2);
@@ -47,10 +67,6 @@ public class CalculatorBadrul {
 		c.setBackground(Color.decode("#555556"));
 		c.setForeground(Color.white);
 		c.addActionListener(new ActionListener(){
-			public void actionperformed(ActionEvent e){
-				String st = jtf.getText();
-					st="";
-			}@Override
             public void actionPerformed(ActionEvent e) {
                 String st = jtf.getText();
 	    	  	if(st.equals("0"))
@@ -67,10 +83,6 @@ public class CalculatorBadrul {
 		cc.setBackground(Color.decode("#555556"));
 		cc.setForeground(Color.white);
 		cc.addActionListener(new ActionListener(){
-			public void actionperformed(ActionEvent e){
-				String st = jtf.getText();
-					st="";
-			}@Override
             public void actionPerformed(ActionEvent e) {
                 String st = jtf.getText();
 				int number = Integer.parseInt(st);
@@ -91,10 +103,6 @@ public class CalculatorBadrul {
 		percent.setBackground(Color.decode("#555556"));
 		percent.setForeground(Color.white);
 		percent.addActionListener(new ActionListener(){
-			public void actionperformed(ActionEvent e){
-				String st = jtf.getText();
-					st="";
-			}@Override
             public void actionPerformed(ActionEvent e) {
                 String st = jtf.getText();
 				if(st.equals("0"))
@@ -112,10 +120,6 @@ public class CalculatorBadrul {
 		div.setBorderPainted(false);
 		div.setForeground(Color.white);
 		div.addActionListener(new ActionListener(){
-			public void actionperformed(ActionEvent e){
-				String st = jtf.getText();
-					st="";
-			}@Override
             public void actionPerformed(ActionEvent e) {
 				String st = jtf.getText();
 				if(st.equals("0"))
@@ -125,6 +129,8 @@ public class CalculatorBadrul {
             }
 		});
 
+		//addButton("0", Color.GRAY, Color.white);
+
 		JButton zero = new JButton("0");
 		zero.setFont(new Font("Helvetica", Font.PLAIN, 20));
 		zero.setRolloverEnabled(false);
@@ -133,12 +139,6 @@ public class CalculatorBadrul {
 		zero.setBackground(Color.gray);
 		zero.setForeground(Color.white);
 		zero.addActionListener(new ActionListener(){
-			public void actionperformed(ActionEvent e){
-				String st = jtf.getText();
-			    if(st.equals("0"))
-					st="";
-			    jtf.setText(st+"0");
-			}@Override
             public void actionPerformed(ActionEvent e) {
                 String st = jtf.getText();
 				if(st.equals("0"))
@@ -147,7 +147,7 @@ public class CalculatorBadrul {
 				 	jtf.setText(st+"0");
             }
 		});
- 
+
 		JButton one = new JButton("1");
 		one.setFont(new Font("Helvetica", Font.PLAIN, 20));
 		one.setRolloverEnabled(false);
@@ -156,12 +156,6 @@ public class CalculatorBadrul {
 		one.setBackground(Color.GRAY);
 		one.setForeground(Color.white);
 		one.addActionListener(new ActionListener(){
-			public void actionperformed(ActionEvent e){
-	    	  	String st = jtf.getText();
-	    	  	if(st.equals("0"))
-	    			st="";
-	    	  	jtf.setText(st+"1");
-	      	}@Override
         	public void actionPerformed(ActionEvent e) {
             	String st = jtf.getText();
 	    	  	if(st.equals("0"))
@@ -178,12 +172,6 @@ public class CalculatorBadrul {
 		two.setBackground(Color.GRAY);
 		two.setForeground(Color.white);
 		two.addActionListener(new ActionListener(){
-	      	public void actionperformed(ActionEvent e){
-	    	  	String st = jtf.getText();
-	    	  	if(st.equals("0"))
-	    		  	st="";
-	    	  	jtf.setText(st+"2");
-	      	}@Override
         	public void actionPerformed(ActionEvent e) {
             	String st = jtf.getText();
 				if(st.equals("0"))
@@ -201,12 +189,6 @@ public class CalculatorBadrul {
 		three.setBackground(Color.GRAY);
 		three.setForeground(Color.white);
 		three.addActionListener(new ActionListener(){
-	      	public void actionperformed(ActionEvent e){
-	    	  	String st = jtf.getText();
-	    	  	if(st.equals("0"))
-	    		  	st="";
-	    	  	jtf.setText(st+"3");
-	      	}@Override
         	public void actionPerformed(ActionEvent e) {
             	String st = jtf.getText();
 				if(st.equals("0"))
@@ -225,12 +207,6 @@ public class CalculatorBadrul {
 		four.setBackground(Color.GRAY);
 		four.setForeground(Color.white);
 		four.addActionListener(new ActionListener(){
-	      	public void actionperformed(ActionEvent e){
-	    	  	String st = jtf.getText();
-	    	  	if(st.equals("0"))
-	    		  	st="";
-	    	  	jtf.setText(st+"4");
-	      	}@Override
         	public void actionPerformed(ActionEvent e) {
             	String st = jtf.getText();
 				if(st.equals("0"))
@@ -249,12 +225,6 @@ public class CalculatorBadrul {
 		five.setBackground(Color.GRAY);
 		five.setForeground(Color.white);
 		five.addActionListener(new ActionListener(){
-	      	public void actionperformed(ActionEvent e){
-	    	  	String st = jtf.getText();
-	    	  	if(st.equals("0"))
-	    		  	st="";
-	    	  	jtf.setText(st+"5");
-	      	}@Override
         	public void actionPerformed(ActionEvent e) {
             	String st = jtf.getText();
 				if(st.equals("0"))
@@ -273,12 +243,6 @@ public class CalculatorBadrul {
 		six.setBackground(Color.GRAY);
 		six.setForeground(Color.white);
 		six.addActionListener(new ActionListener(){
-	      	public void actionperformed(ActionEvent e){
-	    	  	String st = jtf.getText();
-	    	  	if(st.equals("0"))
-	    		  	st="";
-	    	  	jtf.setText(st+"6");
-	      	}@Override
         	public void actionPerformed(ActionEvent e) {
             	String st = jtf.getText();
 				if(st.equals("0"))
@@ -297,12 +261,6 @@ public class CalculatorBadrul {
 		seven.setBackground(Color.GRAY);
 		seven.setForeground(Color.white);
 		seven.addActionListener(new ActionListener(){
-	      	public void actionperformed(ActionEvent e){
-	    	  	String st = jtf.getText();
-	    	  	if(st.equals("0"))
-	    		  	st="";
-	    	  	jtf.setText(st+"7");
-	      	}@Override
         	public void actionPerformed(ActionEvent e) {
             	String st = jtf.getText();
 				if(st.equals("0"))
@@ -321,12 +279,6 @@ public class CalculatorBadrul {
 		eight.setBackground(Color.GRAY);
 		eight.setForeground(Color.white);
 		eight.addActionListener(new ActionListener(){
-	      	public void actionperformed(ActionEvent e){
-	    	  	String st = jtf.getText();
-	    	  	if(st.equals("0"))
-	    		  	st="";
-	    	  	jtf.setText(st+"8");
-	      	}@Override
         	public void actionPerformed(ActionEvent e) {
             	String st = jtf.getText();
 				if(st.equals("0"))
@@ -345,12 +297,6 @@ public class CalculatorBadrul {
 		nine.setBackground(Color.GRAY);
 		nine.setForeground(Color.white);
 		nine.addActionListener(new ActionListener(){
-	      	public void actionperformed(ActionEvent e){
-	    	  	String st = jtf.getText();
-	    	  	if(st.equals("0"))
-	    		  	st="";
-	    	  	jtf.setText(st+"9");
-	      	}@Override
         	public void actionPerformed(ActionEvent e) {
             	String st = jtf.getText();
 				if(st.equals("0"))
@@ -369,12 +315,6 @@ public class CalculatorBadrul {
 		multiply.setBackground(Color.decode("#F2A33C"));
 		multiply.setForeground(Color.white);
 		multiply.addActionListener(new ActionListener(){
-	      	public void actionperformed(ActionEvent e){
-	    	  	String st = jtf.getText();
-	    	  	if(st.equals("0"))
-	    		  	st="";
-	    	  	jtf.setText(st+"x");
-	      	}@Override
         	public void actionPerformed(ActionEvent e) {
             	String st = jtf.getText();
 				if(st.equals("0"))
@@ -393,12 +333,6 @@ public class CalculatorBadrul {
 		minus.setBackground(Color.decode("#F2A33C"));
 		minus.setForeground(Color.white);
 		minus.addActionListener(new ActionListener(){
-	      	public void actionperformed(ActionEvent e){
-	    	  	String st = jtf.getText();
-	    	  	if(st.equals("0"))
-	    		  	st="";
-	    	  	jtf.setText(st+"-");
-	      	}@Override
         	public void actionPerformed(ActionEvent e) {
             	String st = jtf.getText();
 				if(st.equals("0"))
@@ -417,12 +351,6 @@ public class CalculatorBadrul {
 		plus.setBackground(Color.decode("#F2A33C"));
 		plus.setForeground(Color.white);
 		plus.addActionListener(new ActionListener(){
-	      	public void actionperformed(ActionEvent e){
-	    	  	String st = jtf.getText();
-	    	  	if(st.equals("0"))
-	    		  	st="";
-	    	  	jtf.setText(st+"+");
-	      	}@Override
         	public void actionPerformed(ActionEvent e) {
             	String st = jtf.getText();
 				if(st.equals("0"))
@@ -441,12 +369,6 @@ public class CalculatorBadrul {
 		root.setBackground(Color.decode("#555556"));
 		root.setForeground(Color.white);
 		root.addActionListener(new ActionListener(){
-	      	public void actionperformed(ActionEvent e){
-	    	  	String st = jtf.getText();
-	    	  	if(st.equals("0"))
-	    		  	st="";
-	    	  	jtf.setText(st+"√ ");
-	      	}@Override
         	public void actionPerformed(ActionEvent e) {
             	String st = jtf.getText();
 				if(st.equals("0"))
@@ -465,12 +387,6 @@ public class CalculatorBadrul {
 		dot.setBackground(Color.GRAY);
 		dot.setForeground(Color.white);
 		dot.addActionListener(new ActionListener(){
-	      	public void actionperformed(ActionEvent e){
-	    	  	String st = jtf.getText();
-	    	  	if(st.equals("0"))
-	    		  	st="";
-	    	  	jtf.setText(st+".");
-	      	}@Override
         	public void actionPerformed(ActionEvent e) {
             	String st = jtf.getText();
 				if(st.equals("0"))
@@ -489,12 +405,6 @@ public class CalculatorBadrul {
 		equal.setBackground(Color.decode("#F2A33C"));
 		equal.setForeground(Color.white);
 		equal.addActionListener(new ActionListener(){
-	      	public void actionperformed(ActionEvent e){
-	    	  	String st = jtf.getText();
-	    	  	if(st.equals("0"))
-	    		  	st="";
-	    	  	jtf.setText(st+"=");
-	      	}@Override
         	public void actionPerformed(ActionEvent e) {
             	String st = jtf.getText();
 				if(st.equals("0"))
